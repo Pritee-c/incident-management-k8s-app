@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>Incident Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🚨 Incident Management</h1>
+
+  <div class="card">
+    <input type="text" id="title" placeholder="Incident title">
+    <select id="severity">
+      <option value="LOW">LOW</option>
+      <option value="MEDIUM">MEDIUM</option>
+      <option value="HIGH">HIGH</option>
+    </select>
+    <button onclick="createIncident()">Create Incident</button>
+  </div>
+
+  <h2>Active Incidents</h2>
+  <div id="incidents"></div>
+</div>
+
+<script>
+const API = "http://43.205.235.128:5000";
+
+function loadIncidents() {
+  fetch(`${API}/incidents`)
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("incidents");
+      container.innerHTML = "";
+      data.forEach(i => {
+        container.innerHTML += `
+          <div class="incident ${i.status}">
+            <strong>${i.title}</strong>
+            <span>${i.severity}</span>
+            <span>Status: ${i.status}</span>
+            <button onclick="updateStatus(${i.id}, 'RESOLVED')">Resolve</button>
+          </div>
+        `;
+      });
+    });
+}
+
+function createIncident() {
+  const title = document.getElementById("title").value;
+  const severity = document.getElementById("severity").value;
+
+  fetch(`${API}/incidents`, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({title, severity})
+  }).then(loadIncidents);
+}
+
+function updateStatus(id, status) {
+  fetch(`${API}/incidents/${id}/status`, {
+    method: "PUT",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({status})
+  }).then(loadIncidents);
+}
+
+loadIncidents();
+</script>
+
+</body>
+</html>
+

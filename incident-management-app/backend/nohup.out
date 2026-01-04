@@ -1,0 +1,311 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.36.168:5000
+[33mPress CTRL+C to quit[0m
+165.225.120.161 - - [04/Jan/2026 17:07:14] "OPTIONS /incidents HTTP/1.1" 200 -
+[2026-01-04 17:07:20,255] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 12, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:07:20] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+[2026-01-04 17:07:23,074] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 12, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:07:23] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+[2026-01-04 17:07:50,675] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 12, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:07:50] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+[2026-01-04 17:08:36,530] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 12, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:08:36] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+165.225.120.161 - - [04/Jan/2026 17:08:37] "OPTIONS /incidents HTTP/1.1" 200 -
+165.225.120.161 - - [04/Jan/2026 17:08:50] "OPTIONS /incidents HTTP/1.1" 200 -
+[2026-01-04 17:09:41,695] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 12, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:09:41] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+165.225.120.161 - - [04/Jan/2026 17:09:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+165.225.120.161 - - [04/Jan/2026 17:12:29] "GET /health HTTP/1.1" 200 -
+[2026-01-04 17:13:18,795] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 12, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:13:18] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+165.225.120.161 - - [04/Jan/2026 17:13:24] "OPTIONS /incidents HTTP/1.1" 200 -
+165.225.120.161 - - [04/Jan/2026 17:13:26] "OPTIONS /incidents HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.36.168:5000
+[33mPress CTRL+C to quit[0m
+[2026-01-04 17:18:11,831] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 14, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:18:11] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+165.225.120.161 - - [04/Jan/2026 17:18:29] "OPTIONS /incidents HTTP/1.1" 200 -
+[2026-01-04 17:18:29,369] ERROR in app: Exception on /incidents [POST]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 25, in create_incident
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:18:29] "[35m[1mPOST /incidents HTTP/1.1[0m" 500 -
+[2026-01-04 17:18:29,504] ERROR in app: Exception on /incidents [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Unknown database 'incidentdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ec2-user/incident-management-app/backend/app.py", line 14, in get_incidents
+    conn = get_connection()
+  File "/home/ec2-user/incident-management-app/backend/db.py", line 5, in get_connection
+    return mysql.connector.connect(
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/home/ec2-user/incident-management-app/backend/venv/lib64/python3.9/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1049 (42000): Unknown database 'incidentdb'
+165.225.120.161 - - [04/Jan/2026 17:18:29] "[35m[1mGET /incidents HTTP/1.1[0m" 500 -
+165.225.120.161 - - [04/Jan/2026 17:24:41] "GET /incidents HTTP/1.1" 200 -
+165.225.120.161 - - [04/Jan/2026 17:24:46] "OPTIONS /incidents HTTP/1.1" 200 -
+165.225.120.161 - - [04/Jan/2026 17:24:46] "[35m[1mPOST /incidents HTTP/1.1[0m" 201 -
+165.225.120.161 - - [04/Jan/2026 17:24:46] "GET /incidents HTTP/1.1" 200 -
