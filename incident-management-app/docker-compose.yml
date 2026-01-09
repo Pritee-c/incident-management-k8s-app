@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Database Service
+  db:
+    image: mariadb:latest
+    container_name: incident-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: incidentdb
+    networks:
+      - app-network
+
+  # Backend Service
+  backend:
+    build: ./backend
+    container_name: incident-backend-container
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db  # Uses the service name "db" as the hostname
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: incidentdb
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # Frontend Service
+  frontend:
+    build: ./frontend
+    container_name: incident-frontend-container
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
